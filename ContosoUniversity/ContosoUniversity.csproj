@@ -146,27 +146,6 @@
     </Compile>
     <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Logging\Logger.cs" />
-    <Compile Include="Migrations\202104230848015_InitialCreate.cs" />
-    <Compile Include="Migrations\202104230848015_InitialCreate.designer.cs">
-      <DependentUpon>202104230848015_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104231146335_DataType.cs" />
-    <Compile Include="Migrations\202104231146335_DataType.designer.cs">
-      <DependentUpon>202104231146335_DataType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104231151506_MaxLengthOnNames.cs" />
-    <Compile Include="Migrations\202104231151506_MaxLengthOnNames.designer.cs">
-      <DependentUpon>202104231151506_MaxLengthOnNames.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104231154246_ColumnFirstName.cs" />
-    <Compile Include="Migrations\202104231154246_ColumnFirstName.designer.cs">
-      <DependentUpon>202104231154246_ColumnFirstName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104260722435_finalMigration.cs" />
-    <Compile Include="Migrations\202104260722435_finalMigration.designer.cs">
-      <DependentUpon>202104260722435_finalMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Enrollment.cs" />
@@ -263,23 +242,6 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.6.0.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104230848015_InitialCreate.resx">
-      <DependentUpon>202104230848015_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104231146335_DataType.resx">
-      <DependentUpon>202104231146335_DataType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104231151506_MaxLengthOnNames.resx">
-      <DependentUpon>202104231151506_MaxLengthOnNames.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104231154246_ColumnFirstName.resx">
-      <DependentUpon>202104231154246_ColumnFirstName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104260722435_finalMigration.resx">
-      <DependentUpon>202104260722435_finalMigration.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
