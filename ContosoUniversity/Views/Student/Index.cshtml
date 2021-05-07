@@ -1,5 +1,6 @@
 ﻿@model PagedList.IPagedList<ContosoUniversity.Models.Student>
 @using PagedList.Mvc;
+
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css"/>
 
 @{
@@ -14,10 +15,13 @@
 @using (Html.BeginForm("Index", "Student", FormMethod.Get))
 {
     <p>
-        
         Find by Name: @Html.TextBox("SearchString", ViewBag.CurrntFilter as string)
-        <input type="submit" value="Search" />
+        <input class="btn btn-primary" type="submit" value="Search"/>
     </p>
+    <p>
+        @Html.ActionLink("Filter Students", "Filter")
+    </p>
+
 }
 <table class="table">
     <tr>

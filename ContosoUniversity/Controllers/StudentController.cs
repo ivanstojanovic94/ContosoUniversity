@@ -56,9 +56,9 @@ namespace ContosoUniversity.Controllers
                     students = students.OrderBy(s => s.LastName);
                     break;
             }
-            int pazeSize = 3;
+            int pageSize = 6;
             int pageNumber = (page ?? 1);
-            return View(students.ToPagedList(pageNumber, pazeSize));
+            return View(students.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Student/Details/5
@@ -104,6 +104,7 @@ namespace ContosoUniversity.Controllers
             }
             return View(student);
         }
+
 
         // GET: Student/Edit/5
         public ActionResult Edit(int? id)
@@ -189,6 +190,28 @@ namespace ContosoUniversity.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult Filter()
+        {
+            var students = from s in db.Students select s;
+
+            var vm = FilterData(students.ToList());
+
+            return View(vm);
+        }
+
+        private FilterViewModel FilterData(List<Student> studentList) 
+        {
+            var result = studentList.OrderByDescending(x => x.Age).Take(3).ToList();
+
+            var vm = new FilterViewModel()
+            {
+                Students = result,
+                Message = "String"
+            };
+
+            return vm;
         }
     }
 }

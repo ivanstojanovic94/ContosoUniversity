@@ -1,0 +1,42 @@
+﻿@model ContosoUniversity.Models.FilterViewModel
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+<h2>Filter Students</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("List Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            First Name
+        </th>
+        <th>
+            @Html.ActionLink("Enrollment Date", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("Age", "Index", new { sortOrder = ViewBag.DateSortPart, currentFilter = ViewBag.CurrentFilter })
+        </th>
+    </tr>
+    @foreach (var item in Model.Students)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.LastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FirstMidName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.EnrollmentDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Age)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => Model.Message)
+    </td>
+</tr>
+    }
+</table>
